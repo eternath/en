@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background: #fff; color: #1a1a1a; }
+.wrap { padding: 2rem 1.25rem; max-width: 700px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 2rem; }
+.logo { font-size: 26px; font-weight: 500; letter-spacing: 3px; }
+.logo-sub { font-size: 12px; color: #888; letter-spacing: 1.5px; margin-top: 4px; }
+.logo-line { width: 40px; height: 1.5px; background: #B4956A; margin: 10px auto 0; }
+.section-title { font-size: 12px; font-weight: 600; color: #fff; padding: 5px 14px; border-radius: 6px; margin-bottom: 10px; display: inline-block; letter-spacing: 0.5px; }
+.s-omics { background: #E89C2F; }
+.s-health { background: #E89C2F; }
+.s-lab { background: #D4537E; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 1.75rem; font-size: 12px; table-layout: fixed; }
+th { text-align: left; padding: 6px 8px; font-size: 11px; font-weight: 500; color: #888; border-bottom: 0.5px solid #e0e0e0; }
+td { padding: 7px 8px; border-bottom: 0.5px solid #f2f2f2; vertical-align: middle; }
+.cat { font-size: 10.5px; color: #999; }
+.cat-awk { font-size: 10.5px; color: #085041; background: #E1F5EE; border-radius: 4px; padding: 1px 6px; }
+.price-full { text-align: right; color: #ccc; text-decoration: line-through; font-size: 11px; font-variant-numeric: tabular-nums; }
+.price-sale { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.dash { text-align: right; color: #ccc; }
+.na { text-align: right; color: #bbb; font-size: 11px; font-style: italic; }
+.note-box { background: #fafaf8; border-radius: 8px; padding: 12px 14px; font-size: 11.5px; color: #888; line-height: 1.7; border-left: 3px solid #B4956A; }
+</style>
+</head><body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">ETERNA LONGEVITY</div>
+    <div class="logo-sub">Holistic Wellness</div>
+    <div class="logo-line"></div>
+  </div>
+
+  <div class="section-title s-omics">OMICs: DNA + Epigenetics</div>
+  <table>
+    <colgroup><col style="width:20%"><col style="width:44%"><col style="width:18%"><col style="width:18%"></colgroup>
+    <thead><tr><th>Category</th><th>Package</th><th style="text-align:right">Full price (฿)</th><th style="text-align:right">Special price (฿)</th></tr></thead>
+    <tbody>
+      <tr><td><span class="cat">DNA Test</span></td><td>Precision Health &amp; Drugs</td><td class="price-full">19,990</td><td class="price-sale">17,991</td></tr>
+      <tr><td><span class="cat">DNA Test</span></td><td>Precision Lifestyle</td><td class="price-full">19,990</td><td class="price-sale">17,991</td></tr>
+      <tr><td><span class="cat">DNA Test</span></td><td>Detox &amp; Methylation</td><td class="price-full">19,990</td><td class="price-sale">17,991</td></tr>
+      <tr><td><span class="cat">DNA Test</span></td><td>Precision Legacy (Legend)</td><td class="price-full">39,990</td><td class="price-sale">35,991</td></tr>
+      <tr><td><span class="cat">DNA Combo</span></td><td>Health + Life Package</td><td class="price-full">34,990</td><td class="price-sale">29,742</td></tr>
+      <tr><td><span class="cat">DNA Combo</span></td><td>Health or Life + Legacy</td><td class="price-full">59,990</td><td class="price-sale">50,992</td></tr>
+      <tr><td><span class="cat">DNA Combo</span></td><td>Full Pack (Health+Life+Legacy)</td><td class="price-full">74,990</td><td class="price-sale">63,742</td></tr>
+      <tr><td><span class="cat">Epigenetics</span></td><td>Biological Ages + Pace</td><td class="price-full">49,990</td><td class="price-sale">39,992</td></tr>
+      <tr><td><span class="cat">DNA Subscription</span></td><td>Yearly DNA data storing + Update new mutation</td><td class="na">1,xxx–2,xxx</td><td class="na">XXXX</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title s-health">Personalized Health Service</div>
+  <table>
+    <colgroup><col style="width:20%"><col style="width:44%"><col style="width:18%"><col style="width:18%"></colgroup>
+    <thead><tr><th>Category</th><th>Package</th><th style="text-align:right">Full price (฿)</th><th style="text-align:right">Special price (฿)</th></tr></thead>
+    <tbody>
+      <tr><td><span class="cat">Health Passport</span></td><td>Personalized Health Passport</td><td class="dash">—</td><td class="price-sale">499</td></tr>
+      <tr><td><span class="cat">Health Passport</span></td><td>Personalized Health Passport (Revision per year)</td><td class="dash">—</td><td class="price-sale">299</td></tr>
+      <tr><td><span class="cat">Premium</span></td><td>Premium Health Taking Care</td><td class="na">TBD</td><td class="na">TBD</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title s-lab">LAB</div>
+  <table>
+    <colgroup><col style="width:20%"><col style="width:44%"><col style="width:18%"><col style="width:18%"></colgroup>
+    <thead><tr><th>Category</th><th>Package</th><th style="text-align:right">Full price (฿)</th><th style="text-align:right">Special price (฿)</th></tr></thead>
+    <tbody>
+      <tr><td><span class="cat">Core</span></td><td>1. Core Longevity Package</td><td class="price-full">5,990</td><td class="price-sale">4,990</td></tr>
+      <tr><td><span class="cat">Standard</span></td><td>2. Vitamin Package</td><td class="price-full">15,990</td><td class="price-sale">13,990</td></tr>
+      <tr><td><span class="cat-awk">AWAKENING</span></td><td>2.1 Vitamin Package Awakening</td><td class="dash">—</td><td class="price-sale">9,900</td></tr>
+      <tr><td><span class="cat">Standard</span></td><td>3. Anti-aging Package</td><td class="price-full">20,990</td><td class="price-sale">19,990</td></tr>
+      <tr><td><span class="cat-awk">AWAKENING</span></td><td>3.1 Anti-aging Package Awakening</td><td class="dash">—</td><td class="price-sale">14,990</td></tr>
+      <tr><td><span class="cat">Standard</span></td><td>4. Mineral Package</td><td class="price-full">7,990</td><td class="price-sale">6,990</td></tr>
+      <tr><td><span class="cat-awk">AWAKENING</span></td><td>4.1 Mineral Package Awakening</td><td class="dash">—</td><td class="price-sale">3,990</td></tr>
+      <tr><td><span class="cat">Standard</span></td><td>5. Combo Vitamin (1) + Mineral (3)</td><td class="price-full">23,980</td><td class="price-sale">19,990</td></tr>
+      <tr><td><span class="cat-awk">AWAKENING</span></td><td>5.1 Awakening: Combo Vitamin (1) + Mineral (3)</td><td class="dash">—</td><td class="price-sale">13,490</td></tr>
+      <tr><td><span class="cat">Standard</span></td><td>6. Combo Full Anti-Aging (2) + Mineral (3)</td><td class="price-full">28,980</td><td class="price-sale">25,990</td></tr>
+      <tr><td><span class="cat-awk">AWAKENING</span></td><td>6.1 Awakening: Combo Full Anti-Aging (2) + Mineral (3)</td><td class="dash">—</td><td class="price-sale">17,990</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    Special price is the actual price paid · AWAKENING packages are available for Awakening Lab members · DNA Subscription and Premium Health Taking Care pricing TBD
+  </div>
+</div>
+</body></html>

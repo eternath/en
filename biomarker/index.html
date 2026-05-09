@@ -1,219 +1,93 @@
-
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-.wrap { padding: 2rem 1.25rem; font-family: var(--font-sans); max-width: 680px; }
-.brand { text-align: center; margin-bottom: 2rem; }
-.brand-name { font-size: 24px; font-weight: 500; letter-spacing: 3px; color: var(--color-text-primary); }
-.brand-sub { font-size: 12px; color: var(--color-text-secondary); letter-spacing: 1.5px; margin-top: 4px; }
-.brand-line { width: 40px; height: 1.5px; background: #B4956A; margin: 10px auto 0; }
-.pkg-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
-.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
-.card.awakening { border: 0.5px solid #9FE1CB; }
-.card-header { padding: 12px 14px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); }
-.card-tag { font-size: 10px; font-weight: 500; letter-spacing: 1px; margin-bottom: 3px; }
-.card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); line-height: 1.4; }
-.price-row { display: flex; align-items: baseline; gap: 6px; margin-top: 6px; }
-.price-full { font-size: 11px; color: var(--color-text-tertiary); text-decoration: line-through; }
-.price-sale { font-size: 16px; font-weight: 500; color: var(--color-text-primary); }
-.price-only { font-size: 16px; font-weight: 500; color: var(--color-text-primary); }
-.card-body { padding: 10px 14px; }
-.item { display: flex; align-items: flex-start; gap: 7px; padding: 4px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
-.item:last-child { border-bottom: none; }
-.item.removed { opacity: 0.35; }
-.dot { width: 5px; height: 5px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-.cross { font-size: 11px; color: #E24B4A; margin-top: 2px; flex-shrink: 0; line-height: 1; }
-.item-text { font-size: 12px; color: var(--color-text-primary); line-height: 1.5; }
-.item.removed .item-text { text-decoration: line-through; color: var(--color-text-tertiary); }
-.awake-badge { display: inline-block; font-size: 10px; background: #E1F5EE; color: #085041; border-radius: 4px; padding: 2px 7px; margin-bottom: 4px; }
-.section-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; color: var(--color-text-secondary); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary); }
-.solo { max-width: 320px; margin-bottom: 1.5rem; }
-.c1 .card-tag { color: #8B6A3E; } .c1 .card-header { background: #FAF6F0; } .c1 .dot { background: #B4956A; }
-.c2 .card-tag { color: #2E6B54; } .c2 .card-header { background: #F0F9F5; } .c2 .dot { background: #1D9E75; }
-.c3 .card-tag { color: #72243E; } .c3 .card-header { background: #FDF0F5; } .c3 .dot { background: #D4537E; }
-.c4 .card-tag { color: #185FA5; } .c4 .card-header { background: #EFF6FD; } .c4 .dot { background: #378ADD; }
-.c5 .card-tag { color: #3B6D11; } .c5 .card-header { background: #EAF3DE; } .c5 .dot { background: #639922; }
+body { font-family: -apple-system, sans-serif; background: #fff; }
+.wrap { padding: 1.5rem 1rem; max-width: 780px; margin: 0 auto; }
+.brand { text-align: center; margin-bottom: 1.5rem; }
+.brand-name { font-size: 22px; font-weight: 500; letter-spacing: 3px; color: #1a1a1a; }
+.brand-sub { font-size: 11px; color: #888; letter-spacing: 1.5px; margin-top: 3px; }
+.brand-line { width: 36px; height: 1.5px; background: #B4956A; margin: 8px auto 0; }
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 11.5px; table-layout: fixed; min-width: 620px; }
+th { padding: 7px 6px; font-size: 10.5px; font-weight: 600; border-bottom: 1px solid #ddd; text-align: center; vertical-align: bottom; line-height: 1.3; color: #555; }
+th.left { text-align: left; color: #333; }
+td { padding: 5px 6px; border-bottom: 0.5px solid #f0f0f0; vertical-align: middle; }
+td.item-name { font-size: 11.5px; color: #1a1a1a; }
+td.check { text-align: center; font-size: 14px; }
+.section-row td { background: #f7f7f5; font-weight: 600; font-size: 10.5px; letter-spacing: 0.5px; color: #666; padding: 4px 6px; }
+.yes { color: #1D9E75; }
+.no { color: #ddd; font-size: 12px; }
+.hdr-std { color: #555; }
+.hdr-awk { color: #085041; background: #F0FCF7; border-radius: 4px; }
+.price-line { font-size: 10px; color: #888; font-weight: 400; display: block; margin-top: 2px; }
+.price-special { font-size: 11px; font-weight: 600; color: #1a1a1a; display: block; }
 </style>
+</head><body>
 <div class="wrap">
   <div class="brand">
     <div class="brand-name">ETERNA LONGEVITY</div>
-    <div class="brand-sub">Holistic Wellness</div>
+    <div class="brand-sub">Lab test comparison</div>
     <div class="brand-line"></div>
   </div>
 
-  <div class="section-label">01 · Core Longevity Package</div>
-  <div class="solo">
-    <div class="card c1">
-      <div class="card-header">
-        <div class="card-tag">STANDARD</div>
-        <div class="card-title">Core Longevity Package</div>
-        <div class="price-row"><span class="price-full">5,990</span><span class="price-sale">฿4,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Hemoglobin A1C (HbA1c)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Apolipoprotein B (ApoB)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">C-reactive protein, high sensitivity (hs-CRP)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Insulin Level (Fasting Insulin)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Homocysteine</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Creatinine in serum</div></div>
-      </div>
-    </div>
-  </div>
+  <div class="tbl-wrap">
+  <table>
+    <colgroup>
+      <col style="width:28%">
+      <col style="width:10%">
+      <col style="width:10%">
+      <col style="width:10%">
+      <col style="width:10%">
+      <col style="width:10%">
+      <col style="width:10%">
+      <col style="width:10%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="left">Item</th>
+        <th class="hdr-std">Core<br><span class="price-line">full 5,990</span><span class="price-special">฿4,990</span></th>
+        <th class="hdr-std">Vit<br><span class="price-line">full 15,990</span><span class="price-special">฿13,990</span></th>
+        <th class="hdr-awk">Vit<br>AWK<br><span class="price-special">฿9,900</span></th>
+        <th class="hdr-std">Anti<br><span class="price-line">full 20,990</span><span class="price-special">฿19,990</span></th>
+        <th class="hdr-awk">Anti<br>AWK<br><span class="price-special">฿14,990</span></th>
+        <th class="hdr-std">Min<br><span class="price-line">full 7,990</span><span class="price-special">฿6,990</span></th>
+        <th class="hdr-awk">Min<br>AWK<br><span class="price-special">฿3,990</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-row"><td colspan="8">Core Longevity</td></tr>
+      <tr><td class="item-name">Hemoglobin A1C (HbA1c)</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Apolipoprotein B (ApoB)</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">hs-CRP</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Insulin Level (Fasting)</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Homocysteine</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Creatinine</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
 
-  <div class="section-label">02 · Vitamin Package</div>
-  <div class="pkg-pair">
-    <div class="card c2">
-      <div class="card-header">
-        <div class="card-tag">STANDARD</div>
-        <div class="card-title">Vitamin Package</div>
-        <div class="price-row"><span class="price-full">15,990</span><span class="price-sale">฿11,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">25-hydroxy Vitamin D total</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin A (Retinol)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin C (Ascorbic acid)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin E (Alpha-Tocopherol)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin B12</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Folate (serum)</div></div>
-      </div>
-    </div>
-    <div class="card c2 awakening">
-      <div class="card-header">
-        <div class="awake-badge">AWAKENING</div>
-        <div class="card-title">Vitamin Package Awakening</div>
-        <div class="price-row"><span class="price-only">฿9,900</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">25-hydroxy Vitamin D total</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin A (Retinol)</div></div>
-        <div class="item removed"><div class="cross">✕</div><div class="item-text">Vitamin C (Ascorbic acid)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin E (Alpha-Tocopherol)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin B12</div></div>
-        <div class="item removed"><div class="cross">✕</div><div class="item-text">Folate (serum)</div></div>
-      </div>
-    </div>
-  </div>
+      <tr class="section-row"><td colspan="8">Vitamin</td></tr>
+      <tr><td class="item-name">25-hydroxy Vitamin D total</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Vitamin A (Retinol)</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Vitamin C (Ascorbic acid)</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Vitamin E (Alpha-Tocopherol)</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Vitamin B12</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Folate</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
 
-  <div class="section-label">03 · Anti-aging Package</div>
-  <div class="pkg-pair">
-    <div class="card c3">
-      <div class="card-header">
-        <div class="card-tag">STANDARD</div>
-        <div class="card-title">Anti-aging package</div>
-        <div class="price-row"><span class="price-full">20,990</span><span class="price-sale">฿17,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin Package (6 รายการ)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Free radical (d-Rom Test)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Anti Oxidant profile (PAT test)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">DHEA-S (DHEA Sulfate Level)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Homocysteine</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">hs-CRP</div></div>
-      </div>
-    </div>
-    <div class="card c3 awakening">
-      <div class="card-header">
-        <div class="awake-badge">AWAKENING</div>
-        <div class="card-title">Anti-aging Package Awakening</div>
-        <div class="price-row"><span class="price-only">฿14,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin Package Awakening (4 รายการ)</div></div>
-        <div class="item removed"><div class="cross">✕</div><div class="item-text">Free radical (d-Rom Test)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Anti Oxidant profile (PAT test)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">DHEA-S (DHEA Sulfate Level)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Homocysteine</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">hs-CRP</div></div>
-      </div>
-    </div>
-  </div>
+      <tr class="section-row"><td colspan="8">Anti-aging (additional)</td></tr>
+      <tr><td class="item-name">Free radical (d-Rom Test)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Anti Oxidant profile (PAT test)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">DHEA-S (DHEA Sulfate Level)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td><td class="check no">–</td><td class="check no">–</td></tr>
 
-  <div class="section-label">04 · Mineral Package</div>
-  <div class="pkg-pair">
-    <div class="card c4">
-      <div class="card-header">
-        <div class="card-tag">STANDARD</div>
-        <div class="card-title">Mineral Package</div>
-        <div class="price-row"><span class="price-full">5,990</span><span class="price-sale">฿4,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Ferritin</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Chromium (Cr) in serum</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Copper (Cu) in serum</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Selenium in serum</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Zinc (Zn) in blood</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Magnesium in serum</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Iron (SI)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Calcium</div></div>
-      </div>
-    </div>
-    <div class="card c4 awakening">
-      <div class="card-header">
-        <div class="awake-badge">AWAKENING</div>
-        <div class="card-title">Mineral Package Awakening</div>
-        <div class="price-row"><span class="price-only">฿3,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Ferritin</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Chromium (Cr) in serum</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Copper (Cu) in serum</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Selenium in serum</div></div>
-        <div class="item removed"><div class="cross">✕</div><div class="item-text">Zinc (Zn) in blood</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Magnesium in serum</div></div>
-        <div class="item removed"><div class="cross">✕</div><div class="item-text">Iron (SI)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Calcium</div></div>
-      </div>
-    </div>
+      <tr class="section-row"><td colspan="8">Mineral</td></tr>
+      <tr><td class="item-name">Ferritin</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td></tr>
+      <tr><td class="item-name">Chromium (Cr)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td></tr>
+      <tr><td class="item-name">Copper (Cu)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td></tr>
+      <tr><td class="item-name">Selenium</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check yes">✓</td></tr>
+      <tr><td class="item-name">Zinc (Zn) in blood</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Magnesium (Mg)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Iron (SI)</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td></tr>
+      <tr><td class="item-name">Calcium</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check no">–</td><td class="check yes">✓</td><td class="check no">–</td></tr>
+    </tbody>
+  </table>
   </div>
-
-  <div class="section-label">05 · Combo Packages</div>
-  <div class="pkg-pair">
-    <div class="card c5">
-      <div class="card-header">
-        <div class="card-tag">STANDARD</div>
-        <div class="card-title">Combo Vitamin (1) Pack + Mineral (3) Package</div>
-        <div class="price-row"><span class="price-full">21,980</span><span class="price-sale">฿16,490</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin Package (6 รายการ)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Mineral Package (8 รายการ)</div></div>
-      </div>
-    </div>
-    <div class="card c5 awakening">
-      <div class="card-header">
-        <div class="awake-badge">AWAKENING</div>
-        <div class="card-title">Awakening: Combo Vitamin (1) + Mineral (3)</div>
-        <div class="price-row"><span class="price-only">฿13,490</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Vitamin Package Awakening (4 รายการ)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Mineral Package Awakening (6 รายการ)</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pkg-pair">
-    <div class="card c5">
-      <div class="card-header">
-        <div class="card-tag">STANDARD</div>
-        <div class="card-title">Combo Full Anti-Aging (2) Pack + Mineral (3) Package</div>
-        <div class="price-row"><span class="price-full">26,980</span><span class="price-sale">฿21,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Anti-aging Package (6 รายการ)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Mineral Package (8 รายการ)</div></div>
-      </div>
-    </div>
-    <div class="card c5 awakening">
-      <div class="card-header">
-        <div class="awake-badge">AWAKENING</div>
-        <div class="card-title">Awakening: Combo Full Anti-Aging (2) + Mineral (3)</div>
-        <div class="price-row"><span class="price-only">฿17,990</span></div>
-      </div>
-      <div class="card-body">
-        <div class="item"><div class="dot"></div><div class="item-text">Anti-aging Package Awakening (5 รายการ)</div></div>
-        <div class="item"><div class="dot"></div><div class="item-text">Mineral Package Awakening (6 รายการ)</div></div>
-      </div>
-    </div>
-  </div>
-
 </div>
+</body></html>
